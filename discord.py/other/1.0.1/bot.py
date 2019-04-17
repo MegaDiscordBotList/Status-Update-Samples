@@ -1,3 +1,7 @@
+# An Example from the MDBL Orginisaton
+# https://github.com/MegaDiscordBotList/
+# https://mdbl.surge.sh/
+
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
