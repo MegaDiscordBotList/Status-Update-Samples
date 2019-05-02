@@ -15,7 +15,7 @@ async def on_ready():
     servers = len(bot.servers)
     channels = len([c for c in bot.get_all_channels()])
     # MDBL Status Update
-    print("-----------MDBL-----------\n
+    print("-----------MDBL-----------\n"
           "Admins: {} | API: v6.6".format(len(admins))
     print("\nSending update command...")
     try:
