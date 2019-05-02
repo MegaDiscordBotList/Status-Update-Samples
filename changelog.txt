@@ -1,3 +1,4 @@
 ===== Changelog =====
-+ If @!update is left blank it will set guilds and users to 0
-+ Added a new detection system so admins can say if api should be turned off
++ Added new api system
++ Added command and channels option
++ Added Admin and Owner detection
