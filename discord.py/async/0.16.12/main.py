@@ -16,7 +16,7 @@ async def on_ready():
     channels = len([c for c in bot.get_all_channels()])
     # MDBL Status Update
     print("-----------MDBL-----------\n
-          "Admins: {} | API: v6.6")
+          "Admins: {} | API: v6.6".format(len(admins))
     print("\nSending update command...")
     try:
         channel = bot.get_channel("567208400891543552")
