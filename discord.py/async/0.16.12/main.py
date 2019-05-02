@@ -17,13 +17,13 @@ async def on_ready():
     # MDBL Status Update
     print("-----------MDBL-----------\n"
           "Admins: {} | API: v6.6".format(len(admins))
-    print("\nSending update command...")
+    print("\nSending update command... If this doesn't change there might be an error")
     try:
         channel = bot.get_channel("567208400891543552")
     except:
         print("[MDBL] Unable to get channel!")
     try:
-        await bot.send_message(channel, "@!update {} {} {} {}".format(servers, users, channels, commands))
+        await bot.send_message(channel, "@!update {} {} {} {}".format(servers, users, channels, cmds))
         msg = await bot.wait_for_message(content='API = True')
         return print("MDBL: Updated bot status (Guilds: {} | Users: {} | Channels: {} | Commands: {})".format(servers, users, channels, commands))
     except:
