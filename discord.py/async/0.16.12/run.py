@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import logging
+import mdbl
 ownerid = [''] # Your Discord id
 admins = ['', ''] # Put peoples ids in here that you want to be adble to use the update command
 logging.basicConfig(level=logging.INFO) # Configurates the logger
@@ -15,21 +16,8 @@ async def on_ready():
     servers = len(bot.servers)
     channels = len([c for c in bot.get_all_channels()])
     # MDBL Status Update
-    print("-----------MDBL-----------\n"
-          "Admins: {} | API: v6.6".format(len(admins))
-    print("\nSending update command... If this doesn't change there might be an error")
-    try:
-        channel = bot.get_channel("567208400891543552")
-    except:
-        print("[MDBL] Unable to get channel!")
-    try:
-        await bot.send_message(channel, "@!update {} {} {} {}".format(servers, users, channels, cmds))
-        msg = await bot.wait_for_message(content='API = True')
-        return print("MDBL: Updated bot status (Guilds: {} | Users: {} | Channels: {} | Commands: {})".format(servers, users, channels, commands))
-    except:
-        print("[MDBL] Error sending or awaiting message!")
-    return print("MDBL: Updated bot status (Guilds: {} | Users: {} | Channels: {} | Commands: {})".format(servers, users, channels, commands))
-
+    bt = bot
+    mdbl.post(bt, servers, users, channels, commands)
 @bot.command(pass_context=True)
 async def update(ctx):
     """Update status for MDBL"""
