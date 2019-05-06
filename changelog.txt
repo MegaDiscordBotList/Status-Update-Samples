@@ -1,4 +1,2 @@
 ===== Changelog =====
 + Added new api system
-+ Added command and channels option
-+ Added Admin and Owner detection
